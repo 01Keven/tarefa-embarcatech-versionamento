@@ -2,7 +2,7 @@
 
 int op;
 double value;
-double fromCelsius(), fromFahr(), fromKelvin();
+void fromCelsius(), fromFahr(), fromKelvin();
 
 int main() {
     system("chcp 65001>nul");
@@ -21,7 +21,7 @@ int main() {
         printf("Opção inválida!");
 }
 
-double fromCelsius() {
+void fromCelsius() {
     printf("Insira o valor em Celsius: ");
     scanf("%lf", &value);
 
@@ -30,7 +30,7 @@ double fromCelsius() {
     printf("Kelvin: %.2lf K\n", value + 273.15);
 }
 
-double fromFahr() {
+void fromFahr() {
     printf("Insira o valor em Fahrenheit: ");
     scanf("%lf", &value);
 
@@ -39,7 +39,7 @@ double fromFahr() {
     printf("Kelvin: %.2lf K\n", (value - 32) * 5/9 + 273.15);
 }
 
-double fromKelvin() {
+void fromKelvin() {
     printf("Insira o valor em Kelvin: ");
     scanf("%lf", &value);
 
