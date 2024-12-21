@@ -8,7 +8,7 @@ long double converterBits(double, short int, short int);
 
 
 int main() {
-    
+    system("chcp 65001>nul");
     UnidadeTempo();
 
 
