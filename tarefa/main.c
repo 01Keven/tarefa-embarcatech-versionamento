@@ -1,4 +1,9 @@
 #include <stdio.h>
+#include "lib/tempo.h"
+
+//cabecalhos de apoio ao compilador
+float converte_cm_m(float);
+float converte_mm_m(float);
 long double converterBits(double numero, short int unidade, short int saida) // saida em long double, tres entradas. Funcao por Wilton
 {
     // entrada: primeiro o numero para ser convertido, segundo a unidade de conversao (tipos na proxima linha), terceiro tipo de saida desejada
@@ -61,5 +66,32 @@ long double converterBits(double numero, short int unidade, short int saida) // 
 }
 
 int main() {
+    
+    UnidadeTempo();
+
+
+    printf("\nResultado: %.2f metros.", converte_cm_m(120));  //chamada da funcao que converte de centimetros para metros.
+    printf("\nResultado: %.2f metros.", converte_mm_m(1700));  //chamada da funcao que converte de milimetros para metros.
+
+    return 0;
+}
+//Autor: Hercules Sampaio Oliveira
+float converte_cm_m(float cm){
+
+    float resultado;
+
+    resultado = cm / 100;  //realiza o calculo para metros
+
+    return resultado;  //retorna o resultado
+
+}
+//Autor: Hercules Sampaio Oliveira
+float converte_mm_m(float mm){
+
+    float resultado;
+
+    resultado = mm / 1000;  //realiza o calculo para metros
+
+    return resultado;  //retorna o resultado
 
 }
