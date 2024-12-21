@@ -37,6 +37,7 @@ float converte_mm_m(float mm){
     return resultado;  //retorna o resultado
 
 }
+//Autor: Wilton Lacerda Silva Júnior.
 long double converterBits(double numero, short int unidade, short int saida) // saida em long double, tres entradas. Funcao por Wilton
 {
     // entrada: primeiro o numero para ser convertido, segundo a unidade de conversao (tipos na proxima linha), terceiro tipo de saida desejada
@@ -53,16 +54,16 @@ long double converterBits(double numero, short int unidade, short int saida) // 
         NumParaBits = 8;
         break;
     case 3:
-        NumParaBits = 8192;
+        NumParaBits = 8192; //8 * 1024
         break;
     case 4:
-        NumParaBits = 8388608;
+        NumParaBits = 8388608; //8 * 1024 * 1024
         break;
     case 5:
-        NumParaBits = 8589934592;
+        NumParaBits = 8589934592; //8 * 1024 * 1024 * 1024
         break;
     case 6:
-        NumParaBits = 8796093022208;
+        NumParaBits = 8796093022208; //8 * 1024 * 1024 *1024 * 1024
         break;
     default:
         printf("Tipo de variável inválida. Por favor, selecione um tipo possível\n"); // valor entrado errado
@@ -79,16 +80,16 @@ long double converterBits(double numero, short int unidade, short int saida) // 
         result = NumEmBits / 8;
         break;
     case 3:
-        result = NumEmBits / 8192;
+        result = NumEmBits / 8192; //8 * 1024
         break;
     case 4:
-        result = NumEmBits / 8388608;
+        result = NumEmBits / 8388608; //8 * 1024 * 1024
         break;
     case 5:
-        result = NumEmBits / 8589934592;
+        result = NumEmBits / 8589934592; //8 * 1024 * 1024 * 1024
         break;
     case 6:
-        result = NumEmBits / 8796093022208;
+        result = NumEmBits / 8796093022208; //8 * 1024 * 1024 *1024 * 1024
         break;
     default:
         printf("Tipo de variável inválida. Por favor, selecione um tipo possível\n"); // valor entrado errado
