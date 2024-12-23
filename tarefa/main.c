@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "converter_m_quadrado_cm_quadrado.h"
 //cabecalhos de apoio ao compilador
 float converte_cm_m(float);
 float converte_mm_m(float);
@@ -32,9 +33,4 @@ float converte_mm_m(float mm){
 
     return resultado;  //retorna o resultado
 
-}
-
-//Autor: Pedrobolfute
-float converter_m_quadrado_cm_quadrado(float valor){
-    return valor*10000;
 }
