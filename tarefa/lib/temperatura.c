@@ -1,24 +1,31 @@
 #include <stdio.h>
+#include "temperatura.h"
 
 int op;
 double value;
 void fromCelsius(), fromFahr(), fromKelvin();
 
-int main() {
+void unidadeTemperatura() {
     system("chcp 65001>nul");
 
-    printf("Selecione a unidade inicial:\n");
+    printf("Selecione a unidade de temperatura:\n");
     printf("1 - Celsius\n2 - Fahrenheit\n3 - Kelvin\n");
     scanf("%d", &op);
 
-    if (op == 1)
-        fromCelsius();
-    else if (op == 2)
-        fromFahr();
-    else if (op == 3)
-        fromKelvin();
-    else
-        printf("Opção inválida!");
+    switch(op) {
+        case 1:
+            fromCelsius();
+            break;
+        case 2:
+            fromFahr();
+            break;
+        case 3:
+            fromKelvin();
+            break;
+        default:
+            printf("Opção inválida!");
+            break;
+    }
 }
 
 void fromCelsius() {
@@ -47,5 +54,3 @@ void fromKelvin() {
     printf("Fahrenheit: %.2lf °F\n", (value - 273.15) * 9/5 + 32);
     printf("Kelvin: %.2lf K\n", value);
 }
-
-// Feito por MarlonSS
