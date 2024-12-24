@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include "lib/tempo.h"
 
+#include "lib/temperatura.h"
+
 //cabecalhos de apoio ao compilador
 float converte_cm_m(float);
 float converte_mm_m(float);
 
 int main() {
-    
+    unidadeTemperatura();
     UnidadeTempo();
 
 
