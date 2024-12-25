@@ -1,6 +1,5 @@
 
 #include <stdio.h>
-#include "comprimento.h"
 
 float converte_cm_m(float);
 float converte_mm_m(float);

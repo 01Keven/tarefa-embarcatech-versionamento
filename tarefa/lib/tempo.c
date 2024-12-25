@@ -8,7 +8,7 @@ Imprime todas as conversões na tela
 */
 
 #include <stdio.h>
-#include "tempo.h"
+
 
 void Segundos(float num);
 void Minutos(float num);

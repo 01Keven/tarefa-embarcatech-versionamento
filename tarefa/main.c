@@ -1,9 +1,5 @@
 #include <stdio.h>
-#include "lib/tempo.h"
-#include "lib/converter_m_quadrado_cm_quadrado.h"
-#include "lib/temperatura.h"
-#include "lib/comprimento.h"
-#include "lib/unidadevolume.h"
+#include "lib/unidades_de_medidas.h"
 
 int main() {
     system("chcp 65001>nul");
