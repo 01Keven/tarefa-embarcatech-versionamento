@@ -1,43 +1,51 @@
 #include <stdio.h>
 #include "lib/tempo.h"
 #include "lib/converter_m_quadrado_cm_quadrado.h"
-
 #include "lib/temperatura.h"
-
-//cabecalhos de apoio ao compilador
-float converte_cm_m(float);
-float converte_mm_m(float);
-float converter_m_quadrado_cm_quadrado(float);
+#include "lib/comprimento.h"
+#include "lib/unidadevolume.h"
 
 int main() {
-    unidadeTemperatura();
-    UnidadeTempo();
+    system("chcp 65001>nul");
+    int op;
 
-
-    printf("\nResultado: %.2f metros.", converte_cm_m(120));  //chamada da funcao que converte de centimetros para metros.
-    printf("\nResultado: %.2f metros.", converte_mm_m(1700));  //chamada da funcao que converte de milimetros para metros.
-    printf("\nResultado: %.2f centimetro quadrado.\n\n", converter_m_quadrado_cm_quadrado(1.15));  //chamada da funcao que converte de metro quadrado para centimetro quadrado.
-
-
-    return 0;
-}
-//Autor: Hercules Sampaio Oliveira
-float converte_cm_m(float cm){
-
-    float resultado;
-
-    resultado = cm / 100;  //realiza o calculo para metros
-
-    return resultado;  //retorna o resultado
-
-}
-//Autor: Hercules Sampaio Oliveira
-float converte_mm_m(float mm){
-
-    float resultado;
-
-    resultado = mm / 1000;  //realiza o calculo para metros
-
-    return resultado;  //retorna o resultado
-
-}
+    do
+    {  
+        printf("\nEscolha uma das seguintes opções:\n 1.Unidade de Temperatura\n 2.Unidade de Tempo\n 3.Unidade de Comprimento\n 4.Unidade de Volume\n 5.Unidade de área\n 6.Sair\n Opção: ");
+        scanf("%d", &op);
+        switch (op)
+        {
+            case 1:
+                unidadeTemperatura();
+                break;
+            case 2:
+                UnidadeTempo();
+                break;
+            case 3:
+                UnidadeComprimento();
+                break;
+            case 4:
+                UnidadeVolume();
+                break;
+            case 5:
+            {
+                float valor_metros;
+                printf("Qual o valor em Metros?: ");
+                scanf("%f", &valor_metros);
+                float resultado = converter_m_quadrado_cm_quadrado(valor_metros);
+                printf("Resultado: %f", resultado);
+                break;
+            }
+            default:
+                if (op < 1 || op > 6)
+                {
+                    printf("\nOpção Inválida!\n");
+                }
+                
+                break;
+        }
+    } while (op != 6);
+    
+        
+        return 0;
+    }
