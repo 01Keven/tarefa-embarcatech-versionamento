@@ -1,100 +1,61 @@
 #include <stdio.h>
-#include "lib/tempo.h"
-
-//cabecalhos de apoio ao compilador
-float converte_cm_m(float);
-float converte_mm_m(float);
-long double converterBits(double, short int, short int);
-
+#include "lib/unidades_de_medidas.h"
+#include "lib/massa.h"
+#include "lib/unidade_velocidade.h"
 
 int main() {
     system("chcp 65001>nul");
-    UnidadeTempo();
+    int op;
 
-
-    printf("\nResultado: %.2f metros.", converte_cm_m(120));  //chamada da funcao que converte de centimetros para metros.
-    printf("\nResultado: %.2f metros.", converte_mm_m(1700));  //chamada da funcao que converte de milimetros para metros.
-
-    return 0;
-}
-//Autor: Hercules Sampaio Oliveira
-float converte_cm_m(float cm){
-
-    float resultado;
-
-    resultado = cm / 100;  //realiza o calculo para metros
-
-    return resultado;  //retorna o resultado
-
-}
-//Autor: Hercules Sampaio Oliveira
-float converte_mm_m(float mm){
-
-    float resultado;
-
-    resultado = mm / 1000;  //realiza o calculo para metros
-
-    return resultado;  //retorna o resultado
-
-}
-//Autor: Wilton Lacerda Silva Júnior.
-long double converterBits(double numero, short int unidade, short int saida) // saida em long double, tres entradas. Funcao por Wilton
-{
-    // entrada: primeiro o numero para ser convertido, segundo a unidade de conversao (tipos na proxima linha), terceiro tipo de saida desejada
-    //  tipos: 1 - bits, 2 - bytes, 3 - kilobytes, 4 - megabytes, 5 - gigabytes, 6 - terabytes
-    long double result = 0; // variavel para resultado
-    double NumParaBits = 0; // variavel para calculo
-    long double NumEmBits = 0; // variavel para calculo
-    switch (unidade) // switch para saber qual a unidade de entrada
-    {
-    case 1:
-        NumParaBits = 1;
-        break;
-    case 2:
-        NumParaBits = 8;
-        break;
-    case 3:
-        NumParaBits = 8192; //8 * 1024
-        break;
-    case 4:
-        NumParaBits = 8388608; //8 * 1024 * 1024
-        break;
-    case 5:
-        NumParaBits = 8589934592; //8 * 1024 * 1024 * 1024
-        break;
-    case 6:
-        NumParaBits = 8796093022208; //8 * 1024 * 1024 *1024 * 1024
-        break;
-    default:
-        printf("Tipo de variável inválida. Por favor, selecione um tipo possível\n"); // valor entrado errado
-        return -1;
-        break;
+    do
+    {  
+        printf("\nEscolha uma das seguintes opções:\n 1. Unidade de Comprimento\n 2. Unidades de Massa\n 3. Unidade de Volume\n 4. Unidade de Temperatura\n 5. Unidade de Velocidade\n 6.Watts, quilowatts, cavalos-vapor\n 7. Unidades de área\n 8. Unidades de tempo\n 9. Bits, bytes, kilobytes, megabytes, gigabytes, terabytes\n 0. Sair\n Opção: ");
+        scanf("%d", &op);
+        switch (op)
+        {
+            case 1:
+                UnidadeComprimento();
+                break;
+            case 2:
+                ConverterMassa();
+                break;
+            case 3:
+                UnidadeVolume();
+                break;
+            case 4:
+                unidadeTemperatura();
+                break;
+            case 5:
+                converterVelocidade();
+                break;
+            case 6:
+                converterPotencia();
+                break;
+            case 7:
+            {
+                float valor_metros;
+                printf("Qual o valor em Metros?: ");
+                scanf("%f", &valor_metros);
+                float resultado = converter_m_quadrado_cm_quadrado(valor_metros);
+                printf("Resultado: %f", resultado);
+                break;
+            }
+                break;
+            case 8:
+                UnidadeTempo();
+                break;
+            case 9:
+                converterBits();
+                break;
+            default:
+                if (op < 1 || op > 10)
+                {
+                    printf("\nOpção Inválida!\n");
+                }
+                
+                break;
+        }
+    } while (op != 10 && op != "");
+        
+        return 0;
     }
-    NumEmBits = numero * NumParaBits; // calculo para saber quantas vezes tem que multiplicar a entrada pra transformar em bits
-    switch (saida) // switch para calculo da conversao para saida
-    {
-    case 1:
-        result = NumEmBits;
-        break;
-    case 2:
-        result = NumEmBits / 8;
-        break;
-    case 3:
-        result = NumEmBits / 8192; //8 * 1024
-        break;
-    case 4:
-        result = NumEmBits / 8388608; //8 * 1024 * 1024
-        break;
-    case 5:
-        result = NumEmBits / 8589934592; //8 * 1024 * 1024 * 1024
-        break;
-    case 6:
-        result = NumEmBits / 8796093022208; //8 * 1024 * 1024 *1024 * 1024
-        break;
-    default:
-        printf("Tipo de variável inválida. Por favor, selecione um tipo possível\n"); // valor entrado errado
-        return -1;
-        break;
-    }
-    return result; // retorna o resultado
-}
