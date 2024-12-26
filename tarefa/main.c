@@ -3,7 +3,6 @@
 #include "lib/massa.h"
 #include "lib/unidade_velocidade.h"
 
-
 int main() {
     system("chcp 65001>nul");
     int op;
@@ -60,4 +59,3 @@ int main() {
         
         return 0;
     }
-
