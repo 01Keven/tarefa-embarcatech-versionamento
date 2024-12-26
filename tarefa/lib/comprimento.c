@@ -1,34 +1,53 @@
-
 #include <stdio.h>
+#include <comprimento.h>
 
-float converte_cm_m(float);
-float converte_mm_m(float);
-float converter_m_quadrado_cm_quadrado(float);
+float valor;
+int op;
 
-void UnidadeComprimento() {
-    printf("\nResultado: %.2f metros.", converte_cm_m(120));  //chamada da funcao que converte de centimetros para metros.
-    printf("\nResultado: %.2f metros.", converte_mm_m(1700));  //chamada da funcao que converte de milimetros para metros.
-    printf("\nResultado: %.2f centimetro quadrado.\n\n", converter_m_quadrado_cm_quadrado(1.15));  //chamada da funcao que converte de metro quadrado para centimetro quadrado.
+void UnidadeComprimento(){
+
+    system("chcp 65001>nul");
+
+    printf("Qual unidade de medida deseja converter? \n1 - Metro. \n2 - Centímetros. \n3 - Milímetros \n");
+    scanf("%d", &op);
+    printf("Digite a quantidade: ");
+    scanf("%f", &valor);
+
+    switch(op){
+        case 1: 
+        {
+            metros(valor);
+            break;
+        }
+        case 2:
+        {
+            centimetros(valor);
+            break;
+        }
+        case 3: 
+        {
+            milimetros(valor);
+            break;
+        }
+        default:
+        {
+            printf("Opção Invalida!");
+        }
+    }
 
 }
 
-//Autor: Hercules Sampaio Oliveira
-float converte_cm_m(float cm){
-
-    float resultado;
-
-    resultado = cm / 100;  //realiza o calculo para metros
-
-    return resultado;  //retorna o resultado
-
+void metros(float num){
+    printf("Em centímetros: %.2f", num*100);
+    printf("Em milímetros: %.2f", num*1000);
 }
-//Autor: Hercules Sampaio Oliveira
-float converte_mm_m(float mm){
 
-    float resultado;
+void centimetros(float num){
+    printf("Em metros: %.2f", num/100);
+    printf("Em milímetros: %.2f", num*10);
+}
 
-    resultado = mm / 1000;  //realiza o calculo para metros
-
-    return resultado;  //retorna o resultado
-
+void milimetros(float num){
+    printf("Em metros: %.2f", num/1000);
+    printf("Em centímetrosmetros: %.2f", num/10);
 }
