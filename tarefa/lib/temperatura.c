@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "temperatura.h"
 
 int op;
 double value;

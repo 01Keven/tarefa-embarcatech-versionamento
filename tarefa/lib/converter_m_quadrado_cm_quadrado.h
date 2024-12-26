@@ -1,6 +1,0 @@
-#ifndef CONVERTER_METRO_EM_CENTIMETRO_QUADRADO_H
-#define CONVERTER_METRO_EM_CENTIMETRO_QUADRADO_H
-
-float converter_m_quadrado_cm_quadrado(float val);
-
-#endif

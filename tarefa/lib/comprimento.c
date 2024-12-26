@@ -4,7 +4,7 @@
 float valor;
 int op;
 
-void unidadeComprimento(){
+void UnidadeComprimento(){
 
     system("chcp 65001>nul");
 
