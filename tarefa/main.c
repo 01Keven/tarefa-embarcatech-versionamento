@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include "lib/unidades_de_medidas.h"
 #include "lib/massa.h"
+#include "lib/unidade_velocidade.h"
+
+// #include "lib/converter_bits.h"
 
 int main() {
     system("chcp 65001>nul");
@@ -25,8 +28,12 @@ int main() {
                 unidadeTemperatura();
                 break;
             case 5:
+                converterVelocidade();
                 break;
             case 6:
+                // 6. Watts, quilowatts, cavalos-vapor - RICARDO GONÇALVES DO NASCIMENTO
+                break;
+            case 7:
             {
                 float valor_metros;
                 printf("Qual o valor em Metros?: ");
@@ -35,12 +42,12 @@ int main() {
                 printf("Resultado: %f", resultado);
                 break;
             }
-            case 7:
                 break;
             case 8:
                 UnidadeTempo();
                 break;
             case 9:
+                converterBits();
                 break;
             default:
                 if (op < 1 || op > 10)
