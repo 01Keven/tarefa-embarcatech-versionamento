@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<stdlib.h>
 #include"unidades_de_medidas.h" //puxa as macros do arquivo unidades_de_medidas.h
 
 float potencia(void){
