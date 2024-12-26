@@ -20,9 +20,13 @@
 |--tarefa
   |--lib
     |--comprimento.c
+    |--converter_bits.c
     |--converter_m_quadrado_cm_quadrado.c
+    |--converter_potencia.c
+    |--massa.c
     |--temperatura.c
     |--tempo.c
+    |--unidadade_velocidade.c
     |--unidades_de_medidas.h
     |--unidadevolume.c
   |--.gitignore
