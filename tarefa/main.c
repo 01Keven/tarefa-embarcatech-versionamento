@@ -15,6 +15,9 @@ int main() {
         scanf("%d", &op);
         switch (op)
         {
+            case 0:
+                printf("Encerrando sistema...");
+                break;
             case 1:
                 UnidadeComprimento();
                 break;
