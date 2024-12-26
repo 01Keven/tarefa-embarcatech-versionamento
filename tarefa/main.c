@@ -32,6 +32,11 @@ int main() {
                 printf("Resultado: %f", resultado);
                 break;
             }
+            case 6:
+            {
+                potencia();
+                break;
+            }
             default:
                 if (op < 1 || op > 6)
                 {
