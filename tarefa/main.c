@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include<stdlib.h>
 #include "lib/unidades_de_medidas.h"
 
 int main() {
