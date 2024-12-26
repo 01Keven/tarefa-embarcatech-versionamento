@@ -47,3 +47,12 @@ float converte_cm_m(float cm);
 float converte_mm_m(float mm);
 
 #endif 
+
+/* macros para conversão de potência*/
+
+#define WCV(n)   n/735.5
+#define WkW(n)   n/1000
+#define CVW(n)   n*735.5
+#define CVkW(n)  n*735.5/1000
+#define kWW(n)   n*1000
+#define kWCV(n)  n*1000/735.5
