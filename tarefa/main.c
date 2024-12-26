@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "lib/unidades_de_medidas.h"
+#include "lib/massa.h"
 
 int main() {
     system("chcp 65001>nul");
@@ -7,23 +8,25 @@ int main() {
 
     do
     {  
-        printf("\nEscolha uma das seguintes opções:\n 1.Unidade de Temperatura\n 2.Unidade de Tempo\n 3.Unidade de Comprimento\n 4.Unidade de Volume\n 5.Unidade de área\n 6.Sair\n Opção: ");
+        printf("\nEscolha uma das seguintes opções:\n 1.Unidade de Comprimento\n 2.Unidades de Massa\n 3.Unidade de Volume\n 4.Unidade de Temperatura\n 5.Unidade de Velocidade\n 6.Watts, quilowatts, cavalos-vapo\n 7. Unidades de área\n 8. Unidades de tempo\n 9. Bits, bytes, kilobytes, megabytes, gigabytes, terabytes\n 0. Sair\n Opção: ");
         scanf("%d", &op);
         switch (op)
         {
             case 1:
-                unidadeTemperatura();
-                break;
-            case 2:
-                UnidadeTempo();
-                break;
-            case 3:
                 UnidadeComprimento();
                 break;
-            case 4:
+            case 2:
+                ConverterMassa();
+                break;
+            case 3:
                 UnidadeVolume();
                 break;
+            case 4:
+                unidadeTemperatura();
+                break;
             case 5:
+                break;
+            case 6:
             {
                 float valor_metros;
                 printf("Qual o valor em Metros?: ");
@@ -32,15 +35,22 @@ int main() {
                 printf("Resultado: %f", resultado);
                 break;
             }
+            case 7:
+                break;
+            case 8:
+                UnidadeTempo();
+                break;
+            case 9:
+                break;
             default:
-                if (op < 1 || op > 6)
+                if (op < 1 || op > 10)
                 {
                     printf("\nOpção Inválida!\n");
                 }
                 
                 break;
         }
-    } while (op != 6);
+    } while (op != 10);
     
         
         return 0;
