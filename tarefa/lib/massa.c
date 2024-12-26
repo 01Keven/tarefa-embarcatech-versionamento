@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "massa.h"
 
 void ConverterMassa() {
     int escolha;

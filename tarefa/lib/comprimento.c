@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <comprimento.h>
 
 float valor;
 int op;
