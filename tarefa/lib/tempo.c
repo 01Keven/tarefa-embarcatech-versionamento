@@ -8,7 +8,7 @@ Imprime todas as conversões na tela
 */
 
 #include <stdio.h>
-#include "tempo.h"
+
 
 void Segundos(float num);
 void Minutos(float num);
@@ -22,7 +22,7 @@ void UnidadeTempo(){
 
     printf("Qual unidade de tempo que você deseja converter?\n 1.Segundos\n 2.Minutos\n 3.Horas\n");
     scanf("%d", &opcao);
-    printf("Digite a unidade de medida: ");
+    printf("Digite o valor: ");
     scanf("%f", &num);
 
     switch(opcao){
