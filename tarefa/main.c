@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "lib/unidades_de_medidas.h"
-#include "lib/massa.h"
-#include "lib/unidade_velocidade.h"
+
 
 int main() {
     system("chcp 65001>nul");
@@ -9,7 +8,7 @@ int main() {
 
     do
     {  
-        printf("\nEscolha uma das seguintes opções:\n 1. Unidade de Comprimento\n 2. Unidades de Massa\n 3. Unidade de Volume\n 4. Unidade de Temperatura\n 5. Unidade de Velocidade\n 6.Watts, quilowatts, cavalos-vapor\n 7. Unidades de área\n 8. Unidades de tempo\n 9. Bits, bytes, kilobytes, megabytes, gigabytes, terabytes\n 0. Sair\n Opção: ");
+        printf("\nEscolha uma das seguintes opções:\n 1. Unidade de Comprimento\n 2. Unidades de Massa\n 3. Unidade de Volume\n 4. Unidade de Temperatura\n 5. Unidade de Velocidade\n 6. Watts, quilowatts, cavalos-vapor\n 7. Unidades de área\n 8. Unidades de tempo\n 9. Bits, bytes, kilobytes, megabytes, gigabytes, terabytes\n 0. Sair\n Opção: ");
         scanf("%d", &op);
         switch (op)
         {
@@ -48,14 +47,14 @@ int main() {
                 converterBits();
                 break;
             default:
-                if (op < 1 || op > 10)
+                if (op < 0 || op > 10)
                 {
                     printf("\nOpção Inválida!\n");
                 }
                 
                 break;
         }
-    } while (op != 10 && op != "");
+    } while (op != 0 && op != "");
         
         return 0;
     }

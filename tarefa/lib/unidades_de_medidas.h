@@ -39,11 +39,53 @@ float converte_galoes_litros(float galoes);
 #endif
 
 ///////////////////////////////////////////////////
-#ifndef CONVERTER_COMPRIMENTO
-#define CONVERTER_COMPRIMENTO
+#ifndef MEDIDA_COMPRIMENTO
+#define MEDIDA_COMPRIMENTO
 
 void UnidadeComprimento();
-float converte_cm_m(float cm);
-float converte_mm_m(float mm);
+void metros(float num);
+void centimetros(float num);
+void milimetros(float num);
+
+#endif
+
+///////////////////////////////////////////////////
+#ifndef UNIDADE_VELOCIDADE_H
+#define UNIDADE_VELOCIDADE_H
+
+void converterVelocidade();
+
+#endif
+
+///////////////////////////////////////////////////
+#ifndef MASSA_H
+#define MASSA_H
+
+void ConverterMassa();
+
+#endif
+
+//////////////////////////////////////////////////
+#ifndef CONVERTERPOTENCIA_H
+#define CONVERTERPOTENCIA_H
+
+
+
+// função para conversão de unidades de potência: Watts, quilowatts e cavalos-vapor
+void converterPotencia();
 
 #endif 
+
+//////////////////////////////////////////////////
+#ifndef CONVERTERBITS_H
+#define CONVERTERBITS_H
+
+
+
+// Função para conversão de unidades de bits, bytes, kilobytes, megabytes, gigabytes e terabytes
+// A função interage com o usuário para coletar os dados de entrada e exibir o resultado diretamente
+void converterBits();
+
+#endif // CONVERTERBITS_H
+
+///////////////////////////////////////////////////
